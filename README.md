@@ -16,33 +16,63 @@ The context here is simple: Find data insights from a retail business selling ac
 
 ## What This Project Answers
 
-*(pendiente — lo trabajamos juntos)*
+1. What does the data actually look like?
+2. What's in the data — which countries, categories, and products are we working with?
+3. What time period does this data cover?
+4. What are the big numbers?
+5. Where is the business concentrated — which categories, countries, or customers drive the most volume?
+6. Who are the top and bottom performers?
 
 ## How This Project Answers It
 
 **Phase 1 — Understand the Data**
-*(pendiente)*
+Before drawing any conclusions, I get familiar with what I'm actually working with — what tables exist, what they contain, and what time range the data covers.
+
+📄 [`01_database_exploration.sql`](sql/01_database_exploration.sql)
+📄 [`02_dimensions_exploration.sql`](sql/02_dimensions_exploration.sql)
+📄 [`03_date_range_exploration.sql`](sql/03_date_range_exploration.sql)
 
 **Phase 2 — Analysis**
-*(pendiente)*
+With the shape of the data clear, I start breaking it down — where the business is concentrated, and who or what is driving the most (and least) revenue.
+
+📄 [`05_magnitude_analysis.sql`](sql/05_magnitude_analysis.sql)
+📄 [`06_ranking_analysis.sql`](sql/06_ranking_analysis.sql)
 
 **Phase 3 — KPIs**
-*(pendiente)*
+The big numbers — the ones a stakeholder would actually want to see first: total sales, total orders, total customers, average price.
 
----
+📄 [`04_measures_exploration.sql`](sql/04_measures_exploration.sql)
 
 ## Tech Stack
 
-*(pendiente)*
+- **SQL Server (T-SQL)**
+- Core techniques: `INFORMATION_SCHEMA` metadata queries, `DISTINCT`, date functions (`MIN`, `MAX`, `DATEDIFF`), aggregate functions (`SUM`, `AVG`, `COUNT`), `GROUP BY` / `ORDER BY`, window ranking functions (`RANK()`, `TOP`)
 
 ## Repository Structure
 
-*(pendiente)*
+| Folder / File | Contents |
+|---|---|
+| `sql/00_init_database.sql` | Database and schema setup, initial data load |
+| `sql/01_database_exploration.sql` | Table and column metadata |
+| `sql/02_dimensions_exploration.sql` | Unique values across key dimensions |
+| `sql/03_date_range_exploration.sql` | Temporal boundaries of the dataset |
+| `sql/04_measures_exploration.sql` | Core business metrics (KPIs) |
+| `sql/05_magnitude_analysis.sql` | Distribution across categories/geography |
+| `sql/06_ranking_analysis.sql` | Top/bottom performers |
 
-## Key Findings
+## KPIs
 
-*(pendiente)*
+The headline numbers this project surfaces:
+
+- Total Sales
+- Total Quantity Sold
+- Average Selling Price
+- Total Orders
+- Total Products
+- Total Customers
+
+*(valores reales pendientes de ejecutar las queries — los añado en cuanto los tenga)*
 
 ## Next Steps
 
-*(pendiente)*
+This EDA sets the groundwork for [**Sales Funnel Analysis**](#), where these same metrics get extended into trend analysis, customer segmentation, and interactive dashboards in Tableau and Power BI.
