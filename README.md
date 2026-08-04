@@ -26,14 +26,17 @@ The context here is simple: Find data insights from a retail business selling ac
 ## How This Project Answers It
 
 **Phase 1 — Understand the Data**
-Before drawing any conclusions, I get familiar with what I'm actually working with — what tables exist, what they contain, and what time range the data covers.
+Before drawing any conclusions, what tables exist? what they contain? and what time range the data covers?
 
 📄 [`01_database_exploration.sql`](scripts/01_database_exploration.sql)
 📄 [`02_dimensions_exploration.sql`](scripts/02_dimensions_exploration.sql)
 📄 [`03_date_range_exploration.sql`](scripts/03_date_range_exploration.sql)
 
+Schema Diagram:
+![Layers schema](docs/schema_diagram.png)
+
 **Phase 2 — Analysis**
-With the shape of the data clear, I start breaking it down — where the business is concentrated, and who or what is driving the most (and least) revenue.
+With the shape of the data clear, where the business is concentrated? who or what is driving the most revenue? and least?
 📄 [`04_measures_exploration.sql`](scripts/04_measures_exploration.sql)
 📄 [`05_magnitude_analysis.sql`](scripts/05_magnitude_analysis.sql)
 📄 [`06_ranking_analysis.sql`](scripts/06_ranking_analysis.sql)
