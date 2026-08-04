@@ -28,3 +28,16 @@ SELECT
     CHARACTER_MAXIMUM_LENGTH
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'dim_customers';
+
+/*
+===============================================================================
+Conclusion
+===============================================================================
+- The schema exploration confirms that the 'dim_customers' table contains
+  customer identifiers, personal information, and date-related attributes.
+- The table uses appropriate data types such as INT, NVARCHAR(50), and DATE.
+- Most columns allow NULL values, indicating that missing data may exist and
+  should be considered.
+===============================================================================
+*/
+
