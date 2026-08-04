@@ -28,20 +28,20 @@ The context here is simple: Find data insights from a retail business selling ac
 **Phase 1 — Understand the Data**
 Before drawing any conclusions, I get familiar with what I'm actually working with — what tables exist, what they contain, and what time range the data covers.
 
-📄 [`01_database_exploration.sql`](sql/01_database_exploration.sql)
-📄 [`02_dimensions_exploration.sql`](sql/02_dimensions_exploration.sql)
-📄 [`03_date_range_exploration.sql`](sql/03_date_range_exploration.sql)
+📄 [`01_database_exploration.sql`](scripts/01_database_exploration.sql)
+📄 [`02_dimensions_exploration.sql`](scripts/02_dimensions_exploration.sql)
+📄 [`03_date_range_exploration.sql`](scripts/03_date_range_exploration.sql)
 
 **Phase 2 — Analysis**
 With the shape of the data clear, I start breaking it down — where the business is concentrated, and who or what is driving the most (and least) revenue.
 
-📄 [`05_magnitude_analysis.sql`](sql/05_magnitude_analysis.sql)
-📄 [`06_ranking_analysis.sql`](sql/06_ranking_analysis.sql)
+📄 [`05_magnitude_analysis.sql`](scripts/05_magnitude_analysis.sql)
+📄 [`06_ranking_analysis.sql`](scripts/06_ranking_analysis.sql)
 
 **Phase 3 — KPIs**
 The big numbers — the ones a stakeholder would actually want to see first: total sales, total orders, total customers, average price.
 
-📄 [`04_measures_exploration.sql`](sql/04_measures_exploration.sql)
+📄 [`04_measures_exploration.sql`](scripts/04_measures_exploration.sql)
 
 ## Tech Stack
 
