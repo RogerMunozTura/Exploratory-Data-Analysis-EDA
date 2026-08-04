@@ -8,44 +8,35 @@ Script Purpose:
 	
 WARNING:
     Running this script will drop the entire 'ExploratoryDataAnalysis' database if it exists. 
-    All data in the database will be permanently deleted. Proceed with caution 
-    and ensure you have proper backups before running this script.
+    All data in the database will be permanently deleted. 
 
 BEFORE RUNNING:
     Update the file paths in the BULK INSERT statements below (search for
     <YOUR-LOCAL-PATH>) to match where you cloned this repository on your machine.
-    Example: if you cloned it to C:\projects\retail-eda-analysis, replace
-    <YOUR-LOCAL-PATH> with C:\projects\retail-eda-analysis
 */
 
--- Switch to the 'master' database — this is SQL Server's control panel,
--- you need to be here to create or drop other databases
 USE master;
 GO
 
--- Drop and recreate the '' database
--- If it already exists, kick out any active connections and delete it completely
+-- If it already exists, delte any active connections and delete it completely
 IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'ExploratoryDataAnalysis')
 BEGIN
-    ALTER DATABASE ExploratoryDataAnalysis SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
     DROP DATABASE ExploratoryDataAnalysis;
 END;
 GO
 
--- Create the 'ExploratoryDataAnalysis' database from scratch, clean
+-- Create the 'ExploratoryDataAnalysis' database
 CREATE DATABASE ExploratoryDataAnalysis;
 GO
 
--- Switch into the new database so the next commands run inside it
 USE ExploratoryDataAnalysis;
 GO
 
--- Create the 'gold' schema — think of it as a folder inside the database
--- that holds the clean, analysis-ready tables
+-- Create the 'gold' schema that holds the clean, analysis-ready tables
 CREATE SCHEMA gold;
 GO
 
--- Customers table: one row per customer, with basic profile info
+-- Customers table
 CREATE TABLE gold.dim_customers(
 	customer_key int,
 	customer_id int,
@@ -60,7 +51,7 @@ CREATE TABLE gold.dim_customers(
 );
 GO
 
--- Products table: one row per product, with category and cost info
+-- Products table
 CREATE TABLE gold.dim_products(
 	product_key int ,
 	product_id int ,
@@ -76,7 +67,7 @@ CREATE TABLE gold.dim_products(
 );
 GO
 
--- Sales table: one row per order line — this is the core transactional data,
+-- Sales table
 -- it links back to customers and products through their keys
 CREATE TABLE gold.fact_sales(
 	order_number nvarchar(50),
@@ -118,7 +109,7 @@ WITH (
 );
 GO
 
--- Same for sales — this one is usually the biggest file
+-- Same for sales
 TRUNCATE TABLE gold.fact_sales;
 GO
 
