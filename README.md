@@ -48,23 +48,6 @@ The big numbers — the ones a stakeholder would actually want to see first: tot
 📄 [`11_report_customers.sql`](scripts/11_report_customers.sql)
 📄 [`12_report_products.sql`](scripts/12_report_products.sql)
 
-## Tech Stack
-
-- **SQL Server (T-SQL)**
-- Core techniques: `INFORMATION_SCHEMA` metadata queries, `DISTINCT`, date functions (`MIN`, `MAX`, `DATEDIFF`), aggregate functions (`SUM`, `AVG`, `COUNT`), `GROUP BY` / `ORDER BY`, window ranking functions (`RANK()`, `TOP`)
-
-## Repository Structure
-
-| Folder / File | Contents |
-|---|---|
-| `sql/00_init_database.sql` | Database and schema setup, initial data load |
-| `sql/01_database_exploration.sql` | Table and column metadata |
-| `sql/02_dimensions_exploration.sql` | Unique values across key dimensions |
-| `sql/03_date_range_exploration.sql` | Temporal boundaries of the dataset |
-| `sql/04_measures_exploration.sql` | Core business metrics (KPIs) |
-| `sql/05_magnitude_analysis.sql` | Distribution across categories/geography |
-| `sql/06_ranking_analysis.sql` | Top/bottom performers |
-
 ## KPIs
 
 The headline numbers this project surfaces:
