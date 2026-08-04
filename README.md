@@ -34,14 +34,19 @@ Before drawing any conclusions, I get familiar with what I'm actually working wi
 
 **Phase 2 — Analysis**
 With the shape of the data clear, I start breaking it down — where the business is concentrated, and who or what is driving the most (and least) revenue.
-
+📄 [`04_measures_exploration.sql`](scripts/04_measures_exploration.sql)
 📄 [`05_magnitude_analysis.sql`](scripts/05_magnitude_analysis.sql)
 📄 [`06_ranking_analysis.sql`](scripts/06_ranking_analysis.sql)
+📄 [`07_change_over_time_analysis.sql`](scripts/07_change_over_time_analysis.sql)
+📄 [`08_cumulative_analysis.sql`](scripts/08_cumulative_analysis.sql)
+📄 [`09_performance_analysis.sql`](scripts/09_performance_analysis.sql)
+📄 [`10_data_segmentation.sql`](scripts/10_data_segmentation.sql)
 
-**Phase 3 — KPIs**
+**Phase 3 — Reports**
 The big numbers — the ones a stakeholder would actually want to see first: total sales, total orders, total customers, average price.
 
-📄 [`04_measures_exploration.sql`](scripts/04_measures_exploration.sql)
+📄 [`11_report_customers.sql`](scripts/11_report_customers.sql)
+📄 [`12_report_products.sql`](scripts/12_report_products.sql)
 
 ## Tech Stack
 
