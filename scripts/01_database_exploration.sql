@@ -12,7 +12,6 @@ Table Used:
 ===============================================================================
 */
 
--- Retrieve a list of all tables in the database
 SELECT 
     TABLE_CATALOG, 
     TABLE_SCHEMA, 
@@ -20,23 +19,23 @@ SELECT
     TABLE_TYPE
 FROM INFORMATION_SCHEMA.TABLES;
 
--- Retrieve all columns for a specific table (dim_customers)
+-- Retrieve all columns for the three gold tables
 SELECT 
+    TABLE_NAME,
     COLUMN_NAME, 
     DATA_TYPE, 
     IS_NULLABLE, 
     CHARACTER_MAXIMUM_LENGTH
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'dim_customers';
+WHERE TABLE_NAME IN ('dim_customers', 'dim_products', 'fact_sales')
+ORDER BY TABLE_NAME, ORDINAL_POSITION;
 
 /*
 ===============================================================================
 Conclusion
 ===============================================================================
-- The schema exploration confirms that the 'dim_customers' table contains
-  customer identifiers, personal information, and date-related attributes.
 - The table uses appropriate data types such as INT, NVARCHAR(50), and DATE.
-- Most columns allow NULL values, indicating that missing data may exist and
+- The columns allow NULL values, indicating that missing data may exist and
   should be considered.
 ===============================================================================
 */
